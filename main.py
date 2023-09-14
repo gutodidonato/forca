@@ -1,5 +1,5 @@
-import random
-
+import random 
+import time 
 from hangman_words import word_list
 
 chosen_word = random.choice(word_list)
@@ -28,13 +28,16 @@ while not end_of_game:
         lives -= 1
         if lives == 0:
             end_of_game = True
+            time.sleep(3)
             print("You lose.")
     print(f"{' '.join(display)}")
 
 
     if "_" not in display:
         end_of_game = True
+        time.sleep(3)
         print("You win.")
 
     from hangman_art import stages
     print(stages[lives])
+    
